@@ -20,7 +20,10 @@
   },
   "homepage": "https://github.com/digitalnsw/arrow-another-do#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "express-session": "^1.16.1",
+    "pug": "^2.0.3"
   },
   "devDependencies": {
     "nodemon": "^1.18.11"
