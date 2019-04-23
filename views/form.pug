@@ -17,3 +17,8 @@ block content
     )
 
     input(type="submit" value="Submit")
+
+    if errors
+      ul
+        each error, i in errors
+          li(class="alert") #{error.msg} #{error.param}

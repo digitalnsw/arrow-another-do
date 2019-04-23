@@ -1,5 +1,6 @@
 const express = require('express');
 const session = require('express-session');
+const { check, validationResult } = require('express-validator/check');
 
 const router = express.Router();
 
@@ -9,11 +10,21 @@ router.get('/', (req, res) => {
   res.render('form');
 });
 
-router.post('/', (req, res) => {
-  sess = req.session;
-  sess.name  = req.body.name;
-  sess.email = req.body.email;
-  res.redirect('result');
+router.post('/', [
+  check('name').isLength({ min: 3}),
+  check('email').isEmail(),
+], (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    res.render('form', {
+      errors: errors.array()
+    });
+  } else {
+    sess = req.session;
+    sess.name  = req.body.name;
+    sess.email = req.body.email;
+    res.redirect('result');
+  }
 });
 
 router.get('/result', (req, res) => {
