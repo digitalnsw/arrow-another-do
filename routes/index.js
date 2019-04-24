@@ -27,12 +27,26 @@ router.post('/personal-information', [
     sess = req.session;
     sess.name  = req.body.name;
     sess.email = req.body.email;
+    sess.phone  = req.body.phone;
+    sess.postcode = req.body.postcode;
     res.redirect('result');
   }
 });
 
-router.get('/result', (req, res) => {
-  res.render('result');
+router.get('/personal-information', (req, res) => {
+  res.render('personal-information');
+});
+
+router.get('/child-information', (req, res) => {
+  res.render('child-information');
+});
+
+router.get('/current-availability', (req, res) => {
+  res.render('current-availability');
+});
+
+router.get('/completed', (req, res) => {
+  res.render('completed');
 });
 
 module.exports = router;

@@ -1,0 +1,97 @@
+extends layout
+
+block content
+  section.au-body
+    .container-fluid
+      .row
+        .col-md-12
+          h2 About your children
+          form
+            .form-item
+              label.label--block(for='children') Child&apos;s age
+              input#children.au-text-input(name='children')
+            .row
+              .form-item.col-xs-15.col-sm-6
+                br
+                br
+                label.au-control-input.au-control-input--block(for='help-comment')  Which school does this child go to?
+                br
+                textarea#help-comment.au-text-input.au-text-input--block(name='help-comment')
+            h2 Which days do you need care?
+            .form-item
+              .row
+                .col-md-2.col-sm-5.col-xs-12
+                  br
+                  br
+                  label.label--block
+                    strong Monday
+                  br
+                  .form-item
+                    label.au-control-input.au-control-input--block
+                      input.au-control-input__input.empty-required(type='checkbox' name='hours' value='mon-am' required='')
+                      span.au-control-input__text Morning
+                    label.au-control-input.au-control-input--block
+                      input.au-control-input__input.empty-required(type='checkbox' name='hours' value='mon-pm' required='')
+                      span.au-control-input__text Afternoon
+                .col-md-2.col-sm-5.col-xs-12
+                  br
+                  br
+                  label.label--block Tuesday
+                  br
+                  .form-item
+                    label.au-control-input.au-control-input--block
+                      input.au-control-input__input.empty-required(type='checkbox' name='hours' value='tue-am' required='')
+                      span.au-control-input__text Morning
+                    label.au-control-input.au-control-input--block
+                      input.au-control-input__input.empty-required(type='checkbox' name='hours' value='tue-pm' required='')
+                      span.au-control-input__text Afternoon
+                .col-md-2.col-sm-5.col-xs-12
+                  br
+                  br
+                  label.label--block Wednesday
+                  br
+                  .form-item
+                    label.au-control-input.au-control-input--block
+                      input.au-control-input__input.empty-required(type='checkbox' name='hours' value='mon-am' required='')
+                      span.au-control-input__text Morning
+                    label.au-control-input.au-control-input--block
+                      input.au-control-input__input.empty-required(type='checkbox' name='hours' value='mon-pm' required='')
+                      span.au-control-input__text Afternoon
+                .col-md-2.col-sm-5.col-xs-12
+                  br
+                  br
+                  label.label--block Thursday
+                  br
+                  .form-item
+                    label.au-control-input.au-control-input--block
+                      input.au-control-input__input.empty-required(type='checkbox' name='hours' value='mon-am' required='')
+                      span.au-control-input__text Morning
+                    label.au-control-input.au-control-input--block
+                      input.au-control-input__input.empty-required(type='checkbox' name='hours' value='mon-pm' required='')
+                      span.au-control-input__text Afternoon
+                .col-md-2.col-sm-5.col-xs-12
+                  br
+                  br
+                  label.label--block Friday
+                  br
+                  .form-item
+                    label.au-control-input.au-control-input--block
+                      input.au-control-input__input.empty-required(type='checkbox' name='hours' value='fri-am' required='')
+                      span.au-control-input__text Morning
+                    label.au-control-input.au-control-input--block
+                      input.au-control-input__input.empty-required(type='checkbox' name='hours' value='fri-pm' required='')
+                      span.au-control-input__text Afternoon
+              .form-item
+                br
+                label.au-control-input.au-control-input--block
+                  input.au-control-input__input(type='checkbox' name='hours' value='website' onclick='toggle(this)')
+                  span.au-control-input__text Check all
+            // FORM SUBMIT BUTTON
+            .form-item
+              a.au-btn(href='current-availability')
+                | Next step
+
+                if errors
+                  ul
+                    each error, i in errors
+                      li(class="alert") #{error.msg} #{error.param}
