@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  section.au-body
+    .container-fluid
+      .row
+        .col-md-12
+          h2 Your information
+          p
+            | We will use this information to let you know if more places become available in your area. You can enter an email address or phone number.
+          form
+            .form-item
+              label.label--block(for='name') Name
+              input#fullname.au-text-input(name='name' type='text')
+            .form-item
+              label.label--block(for='email') Email address 
+              input#email.au-text-input(name='email' type='email')
+            .form-item
+              label.label--block(for='phone') Phone
+              input#phone.au-text-input(name='phone')
+            .form-item
+              label.label--block(for='postcode') Postcode
+              input#postcode.au-text-input(name='postcode')
+            // FORM SUBMIT BUTTON
+            .form-item
+              a.au-btn(href='child-information.html')
+                | Next step
+
+                if errors
+                  ul
+                    each error, i in errors
+                      li(class="alert") #{error.msg} #{error.param}

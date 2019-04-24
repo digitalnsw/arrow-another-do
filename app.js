@@ -6,7 +6,14 @@ const routes = require('./routes/index');
 
 const app = express();
 
-app.use(session({secret: 'sessionSecret'}));
+app.use(session({
+  secret: 'sessionSecret',
+  resave: true,
+  saveUninitialized: true
+}));
+
+/* Serving static files in Express */
+app.use(express.static('public'))
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));

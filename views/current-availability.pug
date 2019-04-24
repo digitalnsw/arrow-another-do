@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  section.au-body
+    .container-fluid
+      .row
+        .col-md-12
+          h2 Your current child care
+          p
+            | If you&apos;ve had trouble finding out of school hours child care in the past, please check all that apply
+          form
+            // CHECK OPTIONS
+            .form-item
+              label.au-control-input.au-control-input--block
+                input.au-control-input__input(type='checkbox' name='referral' value='google')
+                span.au-control-input__text Nobody provides out of school hours care in my area
+              label.au-control-input.au-control-input--block
+                input.au-control-input__input(type='checkbox' name='referral' value='website')
+                span.au-control-input__text There are no spaces available at my local out of school hours care provider
+              label.au-control-input.au-control-input--block
+                input.au-control-input__input(type='checkbox' name='referral' value='website')
+                span.au-control-input__text I don&apos;t want to send my children to different places
+              label.au-control-input.au-control-input--block
+                input.au-control-input__input(type='checkbox' name='referral' value='website')
+                span.au-control-input__text I&apos;ve found care, but there aren&apos;t enough places
+            // FORM SUBMIT BUTTON
+            .form-item
+              a.au-btn(href='completed.html')
+                | Finish
+
+                if errors
+                  ul
+                    each error, i in errors
+                      li(class="alert") #{error.msg} #{error.param}

@@ -7,16 +7,20 @@ const router = express.Router();
 let sess
 
 router.get('/', (req, res) => {
-  res.render('form');
+  res.render('index');
 });
 
-router.post('/', [
+router.get('/personal-information', (req, res) => {
+  res.render('personal-information');
+});
+
+router.post('/personal-information', [
   check('name').isLength({ min: 3}),
   check('email').isEmail(),
 ], (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
-    res.render('form', {
+    res.render('personal-information', {
       errors: errors.array()
     });
   } else {
