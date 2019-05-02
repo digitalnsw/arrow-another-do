@@ -20,6 +20,32 @@
   },
   "homepage": "https://github.com/digitalnsw/arrow-another-do#readme",
   "dependencies": {
+    "@digital.nsw/core": "latest",
+    "@digital.nsw/header": "latest",
+    "@gov.au/accordion": "latest",
+    "@gov.au/animate": "latest",
+    "@gov.au/body": "latest",
+    "@gov.au/breadcrumbs": "latest",
+    "@gov.au/buttons": "latest",
+    "@gov.au/callout": "latest",
+    "@gov.au/control-input": "latest",
+    "@gov.au/cta-link": "latest",
+    "@gov.au/direction-links": "latest",
+    "@gov.au/footer": "latest",
+    "@gov.au/grid-12": "latest",
+    "@gov.au/headings": "latest",
+    "@gov.au/inpage-nav": "latest",
+    "@gov.au/keyword-list": "latest",
+    "@gov.au/link-list": "latest",
+    "@gov.au/main-nav": "latest",
+    "@gov.au/page-alerts": "latest",
+    "@gov.au/progress-indicator": "latest",
+    "@gov.au/responsive-media": "latest",
+    "@gov.au/select": "latest",
+    "@gov.au/side-nav": "latest",
+    "@gov.au/skip-link": "latest",
+    "@gov.au/tags": "latest",
+    "@gov.au/text-inputs": "latest",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "express-session": "^1.16.1",
@@ -27,6 +53,12 @@
     "pug": "^2.0.3"
   },
   "devDependencies": {
-    "nodemon": "^1.18.11"
+    "gulp": "^4.0.1",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "nodemon": "^1.18.11",
+    "shelljs": "^0.8.3"
   }
 }
